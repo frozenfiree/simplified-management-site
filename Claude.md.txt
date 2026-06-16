@@ -1,0 +1,26 @@
+# Project Guide: Premium Animated Web Architecture
+
+## 1. Architectural Mandates
+- **Structure**: Maintain a clean, modular multi-file structure. Do not combine HTML, CSS, and JS into single files.
+- **Engine**: Use GSAP (GreenSock) via modern npm packages or explicit local/CDN imports.
+- **Performance**: Enforce hardware acceleration (`will-change`) and ensure all animations run at 60+ FPS without layout thrashing.
+
+## 2. Technical Stack
+- **Framework**: Vite + Vanilla JavaScript (or Tailwind CSS v4 setup).
+- **Animation**: GSAP + ScrollTrigger + SplitText (or open-source alternatives like SplitType).
+- **Bundler**: Vite (configured for rapid local serving).
+
+## 3. Style and Design System
+- **Theme**: Premium high-contrast editorial minimalism.
+- **Colors**: Primary background `#0A0A0C`, Text `#F1F1F4`, Accent `#E5A93B` (Muted Gold).
+- **Typography**: Large fluid Display serif or heavy extended sans-serif headings; clean geometric sans-serif for UI/body text.
+
+## 4. Mandatory Animation Orchestration
+- **Loading Phase**: Full-screen layout block masking a custom progress counter. Stagger-reveal hero typography only after the loader completely unmounts.
+- **Scroll Tracking**: Hook structural elements to `ScrollTrigger` instances with custom `scrub` and `pin` behaviors.
+- **Micro-Interactions**: Implement a magnet-lag cursor that tracks mouse coordinates using a quick-interpolating `gsap.to` loop.
+
+## 5. Development Workflow Commands
+- Build project: `npm run build`
+- Dev server: `npm run dev`
+- Lint/Format: `npm run lint`

@@ -1,0 +1,166 @@
+/* FEATURES — calendar-sync
+   All selectors scoped under .calendar-sync.
+   Static styling only (fills, bg, glass, fonts). JS mutates
+   transform / opacity / stroke-dash via GSAP. */
+
+.calendar-sync {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  /* shared glass recipe */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  font-family: var(--font-sans);
+}
+
+.calendar-sync .cs-wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+}
+
+/* ---- Master calendar ---- */
+.calendar-sync .cs-master {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
+.calendar-sync .cs-head,
+.calendar-sync .cs-mini-head {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.calendar-sync .cs-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+/* ---- Link / sync arrows ---- */
+.calendar-sync .cs-link {
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-sync .cs-link-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  overflow: visible;
+}
+
+.calendar-sync .cs-arrow {
+  stroke: var(--color-sync);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+
+/* ---- Channel mini-grids ---- */
+.calendar-sync .cs-channels {
+  flex: 1 1 220px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calendar-sync .cs-mini {
+  flex: 1 1 auto;
+}
+
+.calendar-sync .cs-minigrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+/* ---- Cells ---- */
+.calendar-sync .cs-cell {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: var(--color-subtle);
+  border: 1px solid var(--color-border);
+  transform-origin: center;
+}
+
+.calendar-sync .cs-cell.is-booked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.calendar-sync .cs-cell.is-syncing {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-sync) 55%, transparent);
+}
+
+/* ---- Flying booking token ---- */
+.calendar-sync .cs-token {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-sync);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-sync) 70%, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hover: faint grid highlight + brighter token */
+.calendar-sync.is-hot .cs-cell.is-free {
+  border-color: color-mix(in srgb, var(--color-sync) 30%, var(--color-border));
+}
+
+.calendar-sync.is-hot .cs-token {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--color-sync) 85%, transparent);
+}
+
+/* will-change only on moving nodes */
+.calendar-sync .cs-cell,
+.calendar-sync .cs-arrow,
+.calendar-sync .cs-token {
+  will-change: transform, opacity;
+}
+
+/* Narrow widths: minis drop below master via flex-wrap; hide the side arrows. */
+@media (max-width: 600px) {
+  .calendar-sync .cs-link {
+    flex-basis: 100%;
+    display: none;
+  }
+
+  .calendar-sync .cs-master,
+  .calendar-sync .cs-channels {
+    flex-basis: 100%;
+  }
+
+  .calendar-sync .cs-channels {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .calendar-sync .cs-mini {
+    flex: 1 1 45%;
+  }
+}

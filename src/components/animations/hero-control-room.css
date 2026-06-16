@@ -1,0 +1,170 @@
+/* HERO — hero-control-room
+   All selectors scoped under .hero-control-room.
+   Static styling only (fills, strokes, glass, fonts). JS mutates transform/opacity/dash. */
+
+.hero-control-room {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+  aspect-ratio: 720 / 440;
+  margin: 0 auto;
+  /* shared glass recipe */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.hero-control-room .hcr-stage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Dashboard panel ---- */
+.hero-control-room .hcr-panel {
+  fill: var(--color-subtle);
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.hero-control-room .hcr-topbar-logo {
+  fill: var(--color-accent);
+}
+
+.hero-control-room .hcr-topbar-title {
+  fill: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-control-room .hcr-win {
+  fill: var(--color-border);
+}
+
+/* ---- Counter ---- */
+.hero-control-room .hcr-counter-num {
+  fill: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.hero-control-room .hcr-counter-label {
+  fill: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ---- Listing rows ---- */
+.hero-control-room .hcr-row-bar {
+  fill: var(--color-subtle);
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.hero-control-room .hcr-row-dot {
+  fill: var(--color-border);
+}
+
+.hero-control-room .hcr-row-label {
+  fill: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.hero-control-room .hcr-row-value {
+  fill: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ---- Scan bar ---- */
+.hero-control-room .hcr-scan {
+  fill: var(--color-accent);
+  opacity: 0;
+}
+
+/* ---- Hub ---- */
+.hero-control-room .hcr-hub {
+  fill: var(--color-accent);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ---- Connector lines ---- */
+.hero-control-room .hcr-line {
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+
+/* ---- Pulse packets ---- */
+.hero-control-room .hcr-pulse {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-accent) 60%, transparent));
+}
+
+.hero-control-room.is-hot .hcr-pulse {
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--color-accent) 90%, transparent));
+}
+
+/* ---- Channel chips ---- */
+.hero-control-room .hcr-chip {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hero-control-room .hcr-chip-bg {
+  fill: rgba(255, 255, 255, 0.9);
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+}
+
+.hero-control-room .hcr-chip-icon {
+  fill: var(--color-accent);
+}
+
+.hero-control-room .hcr-chip-name {
+  fill: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero-control-room .hcr-tick {
+  stroke: var(--color-sync);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* will-change only on moving nodes */
+.hero-control-room .hcr-pulse,
+.hero-control-room .hcr-scan,
+.hero-control-room .hcr-chip,
+.hero-control-room .hcr-hub,
+.hero-control-room .hcr-row-value,
+.hero-control-room .hcr-row-dot,
+.hero-control-room .hcr-line,
+.hero-control-room .hcr-tick,
+.hero-control-room .hcr-chip-bg {
+  will-change: transform, opacity;
+}
+
+/* Compact / stacked variant for narrow widths */
+.hero-control-room.is-compact {
+  aspect-ratio: auto;
+}

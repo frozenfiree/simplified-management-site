@@ -1,0 +1,99 @@
+/* PARTNERS — payout-split
+   All selectors scoped under .payout-split.
+   Static styling only (fills, strokes, glass, fonts). JS mutates
+   transform / opacity / stroke-dash props via GSAP. */
+
+.payout-split {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  aspect-ratio: 520 / 300;
+  margin: 0 auto;
+  /* shared glass recipe */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.payout-split .ps-stage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Donut ---- */
+.payout-split .ps-donut {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.payout-split .ps-track {
+  stroke: var(--color-border);
+}
+
+.payout-split .ps-arc-a {
+  stroke: var(--color-accent);
+  stroke-linecap: round;
+}
+
+.payout-split .ps-arc-b {
+  stroke: var(--color-sync);
+  stroke-linecap: round;
+}
+
+.payout-split .ps-total {
+  fill: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* ---- Legend / counters ---- */
+.payout-split .ps-sw-a {
+  fill: var(--color-accent);
+}
+
+.payout-split .ps-sw-b {
+  fill: var(--color-sync);
+}
+
+.payout-split .ps-name {
+  fill: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.payout-split .ps-amt {
+  fill: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.payout-split .ps-pct {
+  fill: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* will-change only on moving nodes */
+.payout-split .ps-donut,
+.payout-split .ps-arc-a,
+.payout-split .ps-arc-b,
+.payout-split .ps-track {
+  will-change: transform, opacity;
+}
+
+/* Compact / stacked variant for narrow widths */
+@media (max-width: 460px) {
+  .payout-split {
+    aspect-ratio: auto;
+  }
+}
