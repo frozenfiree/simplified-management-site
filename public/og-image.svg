@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(100,150)">
+    <rect width="64" height="64" rx="16" fill="#2563eb"/>
+    <text x="32" y="45" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="40" font-weight="800" fill="#ffffff" text-anchor="middle">S</text>
+    <text x="92" y="46" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="34" font-weight="700" fill="#0f172a">Simplified Management</text>
+  </g>
+  <text x="100" y="350" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="64" font-weight="800" fill="#0f172a">Property Management</text>
+  <text x="100" y="430" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="64" font-weight="800" fill="#2563eb">Software &amp; Channel Manager</text>
+  <text x="100" y="500" font-family="'Inter', 'Segoe UI', sans-serif" font-size="30" font-weight="500" fill="#64748b">Centralize listings, sync calendars, automate distribution across 50+ OTAs.</text>
+  <rect x="100" y="540" width="220" height="6" rx="3" fill="#10b981"/>
+</svg>
