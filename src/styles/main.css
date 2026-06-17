@@ -258,6 +258,14 @@
     justify-content: center;
   }
 
+  /* Homepage hero carries tall content (text + live animation), so top-align
+     it with clearance below the fixed nav — keeps the eyebrow off the nav and
+     the subtitle above the fold on every device. Subpage heros stay centered. */
+  .hero:has(.hero__anim) {
+    justify-content: flex-start;
+    padding-block: clamp(7rem, 13vh, 9.5rem) clamp(3rem, 8vh, 6rem);
+  }
+
   .hero__anim {
     margin-top: clamp(3rem, 6vw, 5rem);
     display: flex;
@@ -273,9 +281,9 @@
   }
 
   .hero__title {
-    font-size: clamp(2.5rem, 5.5vw, 4.75rem);
-    line-height: 1.06;
-    max-width: 18ch;
+    font-size: clamp(1.85rem, 3.6vw, 3.25rem);
+    line-height: 1.12;
+    max-width: 22ch;
   }
 
   .hero__title .line {
