@@ -25,6 +25,12 @@ export default defineConfig({
           'services/partner-payouts/index.html'
         ),
         privacy: resolve(__dirname, 'privacy/index.html'),
+        terms: resolve(__dirname, 'terms/index.html'),
+        about: resolve(__dirname, 'about/index.html'),
+        pricing: resolve(__dirname, 'pricing/index.html'),
+        contact: resolve(__dirname, 'contact/index.html'),
+        integrations: resolve(__dirname, 'integrations/index.html'),
+        servicesHub: resolve(__dirname, 'services/index.html'),
       },
     },
   },

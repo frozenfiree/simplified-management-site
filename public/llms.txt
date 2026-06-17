@@ -1,0 +1,32 @@
+# Simplified Management
+
+> Simplified Management is a centralized property management software (PMS) and channel manager for vacation rentals, serviced apartments, boutique hotels, and multi-property operators. It centralizes listings, synchronizes calendars in real time, automates distribution across 50+ OTA channels, and automatically splits partner payouts for co-owned properties. Built by B2B InDemand in Viman Nagar, Pune, India.
+
+## What it does
+- Centralized PMS: manage every listing, reservation, and task from one dashboard.
+- Channel Manager: distribute and sync across 50+ OTAs (Airbnb, Booking.com, Agoda, Expedia, Vrbo, MakeMyTrip, Goibibo and more).
+- Real-time Calendar Sync: keep availability synced across channels to eliminate double bookings.
+- Partner Payouts: allocate properties to partners and split earnings and expenses automatically per booking.
+
+## Who it is for
+Property managers, vacation rental operators, serviced apartment providers, boutique hotels, and multi-property operators running roughly 50 to 500+ properties.
+
+## Pricing
+Plans are banded by portfolio size (Starter: up to 50 listings; Growth: 50–200; Scale: 200–500+). Exact pricing is quoted during a demo.
+
+## Key pages
+- Home: https://frozenfiree.github.io/simplified-management-site/
+- Services: https://frozenfiree.github.io/simplified-management-site/services/
+- Property Management Software: https://frozenfiree.github.io/simplified-management-site/services/property-management-software/
+- Channel Manager: https://frozenfiree.github.io/simplified-management-site/services/channel-manager/
+- Calendar Sync: https://frozenfiree.github.io/simplified-management-site/services/calendar-sync/
+- Partner Payouts: https://frozenfiree.github.io/simplified-management-site/services/partner-payouts/
+- Integrations (50+ OTAs): https://frozenfiree.github.io/simplified-management-site/integrations/
+- Pricing: https://frozenfiree.github.io/simplified-management-site/pricing/
+- About: https://frozenfiree.github.io/simplified-management-site/about/
+- Contact: https://frozenfiree.github.io/simplified-management-site/contact/
+
+## Contact
+Email: info@simplifiedmanagement.in
+Location: Viman Nagar, Pune, Maharashtra, India
+Parent company: B2B InDemand
