@@ -24,6 +24,7 @@ export default defineConfig({
           __dirname,
           'services/partner-payouts/index.html'
         ),
+        privacy: resolve(__dirname, 'privacy/index.html'),
       },
     },
   },

@@ -225,14 +225,18 @@
               <span class="lead__meta">DEMO RESPONSE: 24 BUSINESS HOURS</span>
             </div>
 
-            <form class="form-card" action="#" data-reveal>
+            <form class="form-card" action="https://api.web3forms.com/submit" method="POST" data-demo-form data-reveal>
+              <input type="hidden" name="access_key" value="__WEB3FORMS_ACCESS_KEY__" />
+              <input type="hidden" name="subject" value="New Demo Request — Simplified Management" />
+              <input type="hidden" name="from_name" value="Simplified Management Website" />
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none" />
               <div class="field">
                 <label for="name">Full Name</label>
-                <input id="name" name="name" type="text" placeholder="Rajesh Kumar" autocomplete="name" />
+                <input id="name" name="name" type="text" required placeholder="Rajesh Kumar" autocomplete="name" />
               </div>
               <div class="field">
                 <label for="email">Work Email</label>
-                <input id="email" name="email" type="email" placeholder="rajesh@builders.in" autocomplete="email" />
+                <input id="email" name="email" type="email" required placeholder="rajesh@builders.in" autocomplete="email" />
               </div>
               <div class="field">
                 <label for="properties">Total Properties / Listings</label>
@@ -241,6 +245,12 @@
               <div class="field">
                 <label for="context">Portfolio Context</label>
                 <textarea id="context" name="context" placeholder="Tell us about your listings, current channels, and tools you use today."></textarea>
+              </div>
+              <div class="field" style="flex-direction: row; align-items: flex-start; gap: 0.5rem">
+                <input id="consent" name="consent" type="checkbox" required style="width: auto; margin-top: 0.25rem" />
+                <label for="consent" style="font-weight: 400; font-size: 0.85rem; line-height: 1.4">
+                  I agree to the <a href="./privacy/index.html">Privacy Policy</a> and consent to being contacted about my demo request.
+                </label>
               </div>
               <button class="btn btn--primary btn--block" type="submit">Request Demo</button>
             </form>

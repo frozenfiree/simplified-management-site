@@ -3,6 +3,7 @@ import { gsap, ScrollTrigger } from './lib/gsap.js'
 import { runLoader } from './components/loader.js'
 import { revealHero } from './components/hero.js'
 import { initReveals } from './components/scroll.js'
+import { initDemoForm } from './components/form.js'
 import { initHeroControlRoom } from './components/animations/hero-control-room.js'
 import { initCalendarSync } from './components/animations/calendar-sync.js'
 import { initPayoutSplit } from './components/animations/payout-split.js'
@@ -55,6 +56,9 @@ function mountAnimations() {
 }
 
 function boot() {
+  // Lead capture must work regardless of motion preference or animation state.
+  initDemoForm()
+
   // Scroll reveals are gated behind motion preference; animations self-gate.
   const mm = gsap.matchMedia()
   mm.add('(prefers-reduced-motion: no-preference)', () => {
