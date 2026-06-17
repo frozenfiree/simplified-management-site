@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://frozenfiree.github.io/simplified-management-site/sitemap.xml

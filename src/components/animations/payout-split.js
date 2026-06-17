@@ -26,10 +26,10 @@ function markup() {
   <svg viewBox="0 0 520 300" class="ps-stage" role="img" aria-label="Payout split between Partner A and Partner B">
     <!-- donut centered left -->
     <g class="ps-donut" transform="translate(130,150)">
-      <circle class="ps-track" r="78" fill="none" stroke-width="22"/>
-      <circle class="ps-arc-a" r="78" fill="none" stroke-width="22" pathLength="1"
+      <circle class="ps-track" r="80" fill="none" stroke-width="16"/>
+      <circle class="ps-arc-a" r="80" fill="none" stroke-width="16" pathLength="1"
               transform="rotate(-90)"/>
-      <circle class="ps-arc-b" r="78" fill="none" stroke-width="22" pathLength="1"
+      <circle class="ps-arc-b" r="80" fill="none" stroke-width="16" pathLength="1"
               transform="rotate(126)"/>
       <text class="ps-total" x="0" y="6" text-anchor="middle">${inr(0)}</text>
     </g>

@@ -3,19 +3,26 @@ import './hero-control-room.css'
 
 const CHANNELS = ['Airbnb', 'Booking.com', 'Agoda', 'Expedia', 'StayVista']
 
-// Chip vertical anchors (top-left translate y of each chip group); chip is 92x32.
+// Chip vertical anchors (top-left translate y of each chip group); chip is 132x32.
 const CHIP_Y = [80, 152, 216, 284, 356]
-const CHIP_X = 600
-const CHIP_W = 92
+const CHIP_X = 576
+const CHIP_W = 132
 const CHIP_H = 32
+// Tick sits in a reserved gap on the chip's right edge (label never reaches here).
+const TICK_X = CHIP_W - 18 // 114
+// Connectors terminate a few px LEFT of each chip so the line never crosses the
+// chip body. Endpoint x = CHIP_X - LINE_GAP; endpoint y = chip vertical centre.
+const LINE_GAP = 6
+const LINE_END_X = CHIP_X - LINE_GAP // 570
+const CHIP_CY = CHIP_Y.map((y) => y + CHIP_H / 2) // icon/centre line of each chip
 
-// Connector path d-strings (hub -> chip left/centre). End points align with chip icon (~cy 16).
+// Connector path d-strings (hub -> just left of chip edge, at chip centre Y).
 const LINE_D = [
-  'M336,220 C 470,90  540,90  600,96',
-  'M336,220 C 470,150 540,150 600,168',
-  'M336,220 C 470,220 540,220 600,232',
-  'M336,220 C 470,290 540,290 600,300',
-  'M336,220 C 470,350 540,350 600,372',
+  `M336,220 C 460,90  520,${CHIP_CY[0]}  ${LINE_END_X},${CHIP_CY[0]}`,
+  `M336,220 C 460,150 520,${CHIP_CY[1]}  ${LINE_END_X},${CHIP_CY[1]}`,
+  `M336,220 C 460,220 520,${CHIP_CY[2]}  ${LINE_END_X},${CHIP_CY[2]}`,
+  `M336,220 C 460,290 520,${CHIP_CY[3]}  ${LINE_END_X},${CHIP_CY[3]}`,
+  `M336,220 C 460,350 520,${CHIP_CY[4]}  ${LINE_END_X},${CHIP_CY[4]}`,
 ]
 
 const COUNTER_TARGET = 247
@@ -64,7 +71,7 @@ function buildChips() {
         <rect class="hcr-chip-bg" width="${CHIP_W}" height="${CHIP_H}" rx="10"/>
         <circle class="hcr-chip-icon" cx="16" cy="16" r="6"/>
         <text class="hcr-chip-name" x="30" y="20">${name}</text>
-        <g class="hcr-tick" transform="translate(74,16)">
+        <g class="hcr-tick" transform="translate(${TICK_X},16)">
           <path pathLength="1" d="M -5 0 L -1 4 L 5 -4"/>
         </g>
       </g>`

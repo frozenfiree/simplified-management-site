@@ -25,12 +25,36 @@ const CHIPS = [
 
 const CHIP_W = 96
 const CHIP_H = 34
+// Connectors stop just short of each chip's near edge (along the radial line)
+// so the line never crosses into the chip body — the Booking.com chip sits
+// straight above the hub, so its line is vertical and used to poke out the
+// chip's bottom edge.
+const LINE_GAP = 6
 
 function anchorFor(angle) {
   const rad = (angle * Math.PI) / 180
   return {
     x: Math.round(HUB.x + RADIUS * Math.cos(rad)),
     y: Math.round(HUB.y + RADIUS * Math.sin(rad)),
+  }
+}
+
+// Point where the hub->chip line should terminate: the chip's rectangle edge
+// (toward the hub) minus LINE_GAP. Computed from the chip centre by walking
+// back along the radial direction to the nearest rect boundary.
+function lineEndFor(angle) {
+  const rad = (angle * Math.PI) / 180
+  const cos = Math.cos(rad)
+  const sin = Math.sin(rad)
+  const c = anchorFor(angle)
+  const back =
+    Math.min(
+      Math.abs(cos) < 1e-6 ? Infinity : CHIP_W / 2 / Math.abs(cos),
+      Math.abs(sin) < 1e-6 ? Infinity : CHIP_H / 2 / Math.abs(sin)
+    ) + LINE_GAP
+  return {
+    x: Math.round(c.x - back * cos),
+    y: Math.round(c.y - back * sin),
   }
 }
 
@@ -48,8 +72,8 @@ export function initOtaConstellation(root) {
   }).join('')
 
   const lineMarkup = CHIPS.map((chip, i) => {
-    const a = anchorFor(chip.angle)
-    return `<line class="oc-line" data-i="${i}" x1="${HUB.x}" y1="${HUB.y}" x2="${a.x}" y2="${a.y}" pathLength="1"/>`
+    const e = lineEndFor(chip.angle)
+    return `<line class="oc-line" data-i="${i}" x1="${HUB.x}" y1="${HUB.y}" x2="${e.x}" y2="${e.y}" pathLength="1"/>`
   }).join('')
 
   root.innerHTML = `

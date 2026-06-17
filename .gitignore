@@ -5,6 +5,9 @@ dist-ssr
 .DS_Store
 .vite
 
+# Local dev artifacts (bug-report screenshots, scratch notes)
+Issues/
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

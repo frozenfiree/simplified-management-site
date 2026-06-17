@@ -49,8 +49,12 @@
 .payout-split .ps-total {
   fill: var(--color-text);
   font-family: var(--font-display);
-  font-size: 30px;
+  /* User-unit size (whole SVG scales via viewBox, so this scales with the
+     donut). Sized so the widest value (₹1,84,000) fits entirely inside the
+     donut hole (inner Ø ~144px) with comfortable side margin. */
+  font-size: 21px;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 /* ---- Legend / counters ---- */

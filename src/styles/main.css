@@ -9,7 +9,8 @@
   --color-subtle: #f8fafc; /* slate-50 canvas */
   --color-border: #e2e8f0;
   --color-text: #0f172a; /* deep slate navy */
-  --color-muted: #64748b; /* slate-500 */
+  --color-muted: #64748b; /* slate-500 — light UI labels only */
+  --color-body: #475569; /* slate-600 — readable secondary body copy */
   --color-accent: #2563eb; /* operations blue */
   --color-sync: #10b981; /* emerald success / sync */
 
@@ -135,7 +136,7 @@
   }
 
   .nav__links a {
-    color: var(--color-muted);
+    color: var(--color-body);
     text-decoration: none;
     font-size: 0.92rem;
     transition: color 0.25s ease;
@@ -242,8 +243,9 @@
   }
 
   .section__lede {
-    color: var(--color-muted);
-    font-size: 1.05rem;
+    color: var(--color-body);
+    font-size: 1.1rem;
+    line-height: 1.65;
     max-width: 66ch;
     margin-top: 1.25rem;
   }
@@ -281,8 +283,9 @@
   }
 
   .hero__lede {
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
-    color: var(--color-muted);
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--color-body);
     max-width: 64ch;
   }
 
@@ -328,8 +331,9 @@
   }
 
   .pillar__text {
-    color: var(--color-muted);
-    font-size: 0.98rem;
+    color: var(--color-body);
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   /* Feature grid ------------------------------------------------------ */
@@ -397,8 +401,9 @@
   }
 
   .feature__desc {
-    color: var(--color-muted);
+    color: var(--color-body);
     font-size: 0.95rem;
+    line-height: 1.55;
   }
 
   /* Partner accounts -------------------------------------------------- */
@@ -545,7 +550,7 @@
 
   .footer p,
   .footer a {
-    color: var(--color-muted);
+    color: var(--color-body);
     font-size: 0.92rem;
     text-decoration: none;
     line-height: 1.7;
