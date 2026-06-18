@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Mascot Preview — Simplified Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 5rem;
+      }
+      h1 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.6rem;
+        margin: 0 0 0.25rem;
+      }
+      .sub {
+        color: #475569;
+        margin: 0 0 2.5rem;
+        font-size: 0.95rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        background: #ffffff;
+      }
+      .card--dark {
+        background: #0f172a;
+        border-color: #1e293b;
+      }
+      .card--dark .tag {
+        color: #cbd5e1;
+      }
+      .card--hero {
+        background: linear-gradient(180deg, #ffffff 0%, #eff5ff 100%);
+      }
+      .stage {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .stage--sm [data-mascot] {
+        max-width: 130px;
+      }
+      .stage--lg [data-mascot] {
+        max-width: 240px;
+      }
+      [data-mascot] {
+        max-width: 180px;
+        width: 100%;
+      }
+      .tag {
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #64748b;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Simman mascot — preview</h1>
+      <p class="sub">
+        Local review only (noindex, not linked anywhere). Same component that
+        would ship to the hero. Hover does nothing — it's an ambient idle loop:
+        bob, blink, wave, antenna pulse, and a one-time "synced" check.
+      </p>
+      <div class="grid">
+        <div class="card card--hero">
+          <div class="stage stage--lg"><div data-mascot></div></div>
+          <span class="tag">Hero size · light</span>
+        </div>
+        <div class="card">
+          <div class="stage"><div data-mascot></div></div>
+          <span class="tag">Default · white</span>
+        </div>
+        <div class="card card--dark">
+          <div class="stage"><div data-mascot></div></div>
+          <span class="tag">On dark</span>
+        </div>
+        <div class="card">
+          <div class="stage stage--sm"><div data-mascot></div></div>
+          <span class="tag">Small · favicon-ish</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/mascot-preview.js"></script>
+  </body>
+</html>

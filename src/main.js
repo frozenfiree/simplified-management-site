@@ -9,6 +9,7 @@ import { initHeroControlRoom } from './components/animations/hero-control-room.j
 import { initCalendarSync } from './components/animations/calendar-sync.js'
 import { initPayoutSplit } from './components/animations/payout-split.js'
 import { initOtaConstellation } from './components/animations/ota-constellation.js'
+import { initMascot } from './components/mascot/simman-bot.js'
 
 // Registry: [data-anim] value -> component initializer. Each component handles
 // its own reduced-motion fallback and returns a cleanup function.
@@ -17,6 +18,7 @@ const ANIMATIONS = {
   'calendar-sync': initCalendarSync,
   'payout-split': initPayoutSplit,
   'ota-constellation': initOtaConstellation,
+  mascot: initMascot,
 }
 
 const prefersReducedMotion = window.matchMedia(

@@ -273,11 +273,34 @@
     width: 100%;
   }
 
+  /* Top row: headline/CTA block beside the brand mascot. Wraps to a stack on
+     narrow screens. */
+  .hero__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    flex-wrap: wrap;
+  }
+
   .hero__inner {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     max-width: 62ch;
+    flex: 1 1 26rem;
+  }
+
+  .hero__mascot {
+    flex: 0 0 auto;
+    width: clamp(190px, 22vw, 270px);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 620px) {
+    .hero__mascot {
+      width: 180px;
+    }
   }
 
   .hero__title {

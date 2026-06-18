@@ -1,0 +1,117 @@
+/* Simman mascot — a friendly "robohands" automation bot, drawn in the same
+   clean rounded-geometry + brand-token style as the site's UI animations. */
+
+.simman-bot {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.bot-stage {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  display: block;
+  overflow: visible;
+}
+
+/* Soft contact shadow */
+.bot-shadow {
+  fill: color-mix(in srgb, var(--color-text) 12%, transparent);
+}
+
+/* Shell: white body with a soft slate outline so it reads on any surface */
+.bot-head,
+.bot-body {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 2.5;
+}
+
+/* Inset screens get a faint brand-blue wash */
+.bot-face,
+.bot-chest {
+  fill: color-mix(in srgb, var(--color-accent) 8%, white);
+  stroke: color-mix(in srgb, var(--color-accent) 16%, var(--color-border));
+  stroke-width: 1.5;
+}
+
+.bot-neck,
+.bot-ear,
+.bot-foot {
+  fill: var(--color-border);
+}
+
+/* Face */
+.bot-eye {
+  fill: var(--color-accent);
+}
+
+.bot-smile {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+/* Limbs — thick round-capped tubes ending in solid "robohand" mitts */
+.bot-limb {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.bot-hand {
+  fill: var(--color-accent);
+  stroke: var(--color-surface);
+  stroke-width: 2.5;
+}
+
+/* Antenna + live pulse (echoes the "live bookings" dot motif elsewhere) */
+.bot-antenna {
+  stroke: var(--color-border);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.bot-antenna-dot {
+  fill: var(--color-sync);
+}
+
+.bot-antenna-ring {
+  fill: none;
+  stroke: var(--color-sync);
+  stroke-width: 2;
+}
+
+/* Chest "synced" checkmark */
+.bot-check {
+  fill: none;
+  stroke: var(--color-sync);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Floating context badges — what the bot manages for you */
+.bot-badge-bg {
+  fill: color-mix(in srgb, var(--color-accent) 6%, white);
+  stroke: var(--color-border);
+  stroke-width: 2;
+}
+
+.bot-badge-glyph {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bot-badge-rupee {
+  fill: var(--color-accent);
+  stroke: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
